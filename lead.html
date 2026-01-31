@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lead Scoring & Qualification</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="navbar">
+    <div class="logo">MarketAI Suite</div>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/platforms">Campaign</a></li>
+        <li><a href="/pitch">Pitch</a></li>
+        <li><a href="/lead">Lead Score</a></li>
+    </ul>
+</div>
+
+<div class="hero">
+    <h1>Lead Scoring & Qualification</h1>
+</div>
+
+<div class="form-box">
+    <form method="POST">
+        <input type="text" name="name" placeholder="Lead Name" required>
+        <input type="text" name="budget" placeholder="Budget (INR)" required>
+        <textarea name="need" placeholder="Business Need" required></textarea>
+        <input type="text" name="urgency" placeholder="Urgency" required>
+        <button type="submit">Score Lead</button>
+    </form>
+
+    {% if result %}
+    <div class="result-box">{{ result }}</div>
+    {% endif %}
+</div>
+
+</body>
+</html>

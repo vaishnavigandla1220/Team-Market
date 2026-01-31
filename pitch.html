@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sales Pitch Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="navbar">
+    <div class="logo">MarketAI Suite</div>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/platforms">Campaign</a></li>
+        <li><a href="/pitch">Pitch</a></li>
+        <li><a href="/lead">Lead Score</a></li>
+    </ul>
+</div>
+
+<div class="hero">
+    <h1>Sales Pitch Generator</h1>
+</div>
+
+<div class="form-box">
+    <form method="POST">
+        <input type="text" name="product" placeholder="Product" required>
+        <textarea name="persona" placeholder="Customer Persona" required></textarea>
+        <button type="submit">Generate Pitch</button>
+    </form>
+
+    {% if result %}
+    <div class="result-box">{{ result }}</div>
+    {% endif %}
+</div>
+
+</body>
+</html>
+
